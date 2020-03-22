@@ -1,0 +1,15 @@
+{%load static%}
+<!-- JavaScript Sction Started -->
+	<script src="{% static 'js/jq.js' %}"></script>
+	<script src="{% static 'js/popper.js' %}"></script>
+	<script src="{%static 'js/boot.js'%}"></script>
+    <script type="text/javascript">
+    	$(document).scroll(function(){
+    		$('.navbar').toggleClass('scrolled',$(this). scrollTop() > $('.navbar').height());
+    	});
+    </script>
+    <script src="{% static 'js/ani.js' %}"></script>
+    <script>
+	  AOS.init();
+	</script>
+	<!-- JavaScript Section Ended -->
