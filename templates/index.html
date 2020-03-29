@@ -1,33 +1,6 @@
-{% load static %}
+{%extends 'base.html'%}
 
-<!-- Made With Love by Prashant Pandey. -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>IEEE|BTKIT</title>
-
-    <!-- Favicon icon -->
-    <link href="{%static 'images/favicon.ico'%}" rel="shortcut icon" type="image/vnd.microsoft.icon">
-
-    {%include 'css.html'%}
-
-  </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-  	{%include 'nav.html'%}
-
-
-
-  	{%block content%}
-
-
-
-  	{% endblock content%}
-
-
+{%block content %}
 	<!-- Jumbo Heading for Topic Started -->
 	<div class="jumbotron jumbotron-fluid height100p banner" id="home">
 	  <div class="container h100">
@@ -47,11 +20,21 @@
 	{% include 'members.html'%}
 
 	{%include 'events.html'%}
-	
-	{%include 'contact.html'%}
 
-	{%include 'footer.html'%}
+	<section class="sec4" id="xtreme">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1> IEEEXtreme</h1>
+					<p>IEEEXtreme is a global challenge in which teams of IEEE Student members – advised and proctored by an IEEE member, and often supported by an IEEE Student Branch – compete in a 24-hour time span against each other to solve a set of programming problems.</p>
+				</div>
+				{% for j in xtreme%}
+				<div class="col-sm-12">
+					<a href="/xtreme/<version>"><h3>IEEEXtreme {{j.version}} Rank of our college.</h3></a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
 
-	{%include 'js.html'%}
-  </body>
-</html>
+{%endblock content %}

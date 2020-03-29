@@ -1,0 +1,30 @@
+{%extends 'index.html'%}
+{% block content%}
+
+<h1>IEEEXtreme {{i.version}}</h1>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Global Rank</th>
+      <th scope="col">Team Name</th>
+      <th scope="col">Regional Rank</th>
+      <th scope="col">Country Rank</th>
+      <th scope="col">College Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for j in team%}
+    {%if xtreme.version == j.version%}
+    <tr>
+      <td>{{j.global_rank}}</td>
+      <td>{{j.team_name}}</td>
+      <td>{{j.region_rank}}</td>
+      <td>{{j.country_rank}}</td>
+      <td>{{j.college_rank}}</td>
+    </tr>
+    {%endif%}
+    {%endfor%}
+  </tbody>
+</table>
+
+{% endblock%}

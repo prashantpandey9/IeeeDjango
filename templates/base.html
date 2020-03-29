@@ -1,0 +1,30 @@
+{% load static %}
+<!-- Made With Love by Prashant Pandey. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IEEE|BTKIT</title>
+
+    <!-- Favicon icon -->
+    <link href="{%static 'images/favicon.ico'%}" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+    {%include 'css.html'%}
+
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  	{%include 'nav.html'%}
+	{%block content %}
+
+	{%endblock content %}
+	
+	{%include 'contact.html'%}
+
+	{%include 'footer.html'%}
+
+	{%include 'js.html'%}
+  </body>
+</html>

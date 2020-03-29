@@ -10,81 +10,37 @@
 					
 				</div>
 			</div>
+			{% for j in s %}
 			<div class="row" data-aos="fade-up">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
 					<div class="placeBox">
 						<div class="imgBx">
-							<img src="{%static 'persons/Varun_sir.jpeg'%}" class="img-fluid">
+							<img src="{{j.image_mem}}" class="img-fluid">
 						</div>
 						<div class="content">
-							<h3>Dr. Varun Kumar Kakar<br><span>Branch Counsellor IEEE<br>Faculty Advisor Signal Processing Society</span></h3>
+							<h3>{{j.name_member}}<br><span>{{j.title}}<br>{{j.society_mem}}</span></h3>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4"></div>
 			</div>
+			{% endfor %}
 			<div class="row" >
+
+				{%for j in member%}
+				 
 				<div class="col-sm-4" data-aos="fade-up">
 					<div class="placeBox">
 						<div class="imgBx">
-							<img src="{%static 'persons/prashant.jpg' %}" class="img-fluid">
+							<img src="{{j.image_mem}}" class="img-fluid">
 						</div>
 						<div class="content">
-							<h3>Prashant Pandey<br><span>Chairperson<br>IEEE Signal Processing Society</span></h3>
+							<h3>{{j.name_member}}<br><span>{{j.title}}<br>{{j.society_mem}}</span></h3>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4" data-aos="fade-up">
-					<div class="placeBox">
-						<div class="imgBx">
-							<img src="{%static 'persons/rajat.jpeg' %}" class="img-fluid">
-						</div>
-						<div class="content">
-							<h3>Rajat Tiwari<br><span>Secretary<br>IEEE Signal Processing Society</span></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4" data-aos="fade-up">
-					<div class="placeBox">
-						<div class="imgBx">
-							<img src="{%static 'persons/kriti.jpg' %}" class="img-fluid">
-						</div>
-						<div class="content">
-							<h3>Kriti Tripathi<br><span>Treasurer<br>IEEE Signal Processing Society</span></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4" data-aos="fade-up">
-					<div class="placeBox">
-						<div class="imgBx">
-							<img src="{%static 'persons/drishti.jpeg'%}" class="img-fluid">
-						</div>
-						<div class="content">
-							<h3>Drishti Pant<br><span>Member<br>IEEE Signal Processing Society</span></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4" data-aos="fade-up">
-					<div class="placeBox">
-						<div class="imgBx">
-							<img src="{%static 'persons/himanshu.jpeg' %}" class="img-fluid">
-						</div>
-						<div class="content">
-							<h3>Himanshu Chand<br><span>Member<br>IEEE Signal Processing Society</span></h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4" data-aos="fade-up">
-					<div class="placeBox">
-						<div class="imgBx">
-							<img src="{%static 'persons/pooja.jpeg'%}" class="img-fluid">
-						</div>
-						<div class="content">
-							<h3>Pooja Agarwal<br><span>Member<br>IEEE Signal Processing Society</span></h3>
-						</div>
-					</div>
-				</div>
+				{%endfor%}
 			</div>
 		</div>
 	</section>
