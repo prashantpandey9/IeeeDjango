@@ -8,7 +8,7 @@
 				</div>
 				{% for j in xtreme%}
 				<div class="col-sm-12">
-					<a href="/xtreme/<version>"><h3>IEEEXtreme {{j.version}} Rank of our college.</h3></a>
+					<a href="{% url 'xtreme' pk=j.version %}"><h3>IEEEXtreme {{j.version}} Rank of our college.</h3></a>
 				</div>
 				{% endfor %}
 			</div>

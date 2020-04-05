@@ -36,18 +36,17 @@ class Event(models.Model):
 		return str(self.year)
 
 class Xtreme(models.Model):
-	version=models.IntegerField(default=9)
+	version=models.IntegerField(default=9,primary_key=True)
 	team_no=models.IntegerField(default=1)
 	def __str__(self):
 		return str(self.version)
 
 class Team(models.Model):
-	version=models.ForeignKey(Xtreme,on_delete=models.CASCADE)
+	ver=models.ForeignKey(Xtreme,on_delete=models.CASCADE)
 	team_name=models.CharField(max_length=50)
 	global_rank=models.IntegerField(default=1)
 	region_rank=models.IntegerField(default=1)
 	country_rank=models.IntegerField(default=1)
 	college_rank=models.IntegerField(default=1)
-
 	def __str__(self):
 		return str(self.version)

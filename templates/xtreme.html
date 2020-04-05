@@ -1,7 +1,11 @@
 {%extends 'index.html'%}
+
 {% block content%}
+{{t.team_name}}
+{%for i in xtreme%}
 
 <h1>IEEEXtreme {{i.version}}</h1>
+
 <table class="table table-striped table-dark">
   <thead>
     <tr>
@@ -13,8 +17,11 @@
     </tr>
   </thead>
   <tbody>
+
     {%for j in team%}
-    {%if xtreme.version == j.version%}
+
+    {%ifequal i.version j.ver.version%}
+
     <tr>
       <td>{{j.global_rank}}</td>
       <td>{{j.team_name}}</td>
@@ -22,9 +29,15 @@
       <td>{{j.country_rank}}</td>
       <td>{{j.college_rank}}</td>
     </tr>
-    {%endif%}
+
+    
+    {%endifequal%}
+
     {%endfor%}
+
   </tbody>
 </table>
 
-{% endblock%}
+{%endfor%}
+
+{% endblock%} 

@@ -21,11 +21,11 @@ def main(request):
 	}
 	return render(request,'index.html',context)
 
-def xtreme(request):
-	xtreme=Xtreme.objects.all().order_by("version")
-	team=Team.objects.all().order_by("college_rank").order_by('version')
+def xtreme(request,pk):
+	xtreme=Xtreme.objects.filter(version=pk).order_by("-version")
+	team=Team.objects.filter(ver__version=pk).order_by("college_rank")
 	context={
 	"team":team,
 	"xtreme":xtreme,
 	}
-	return render(request,'xtreme.html',context)
+	return render(request,'xtreme.html',context)	
