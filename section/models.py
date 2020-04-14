@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
-from django.db.models.signals import pre_save
-# import datetime
 
 # def year_choices():
 #     return [(r,r) for r in range(1984, datetime.date.today().year+1)]
@@ -42,7 +40,7 @@ class Xtreme(models.Model):
 		return str(self.version)
 
 class Team(models.Model):
-	ver=models.ForeignKey(Xtreme,on_delete=models.CASCADE)
+	version=models.ForeignKey(Xtreme,on_delete=models.CASCADE)
 	team_name=models.CharField(max_length=50)
 	global_rank=models.IntegerField(default=1)
 	region_rank=models.IntegerField(default=1)

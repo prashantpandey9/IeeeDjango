@@ -1,7 +1,7 @@
 {%extends 'index.html'%}
 
 {% block content%}
-{{t.team_name}}
+
 {%for i in xtreme%}
 
 <h1>IEEEXtreme {{i.version}}</h1>
@@ -20,7 +20,7 @@
 
     {%for j in team%}
 
-    {%ifequal i.version j.ver.version%}
+    {%ifequal i.version j.version.version%}
 
     <tr>
       <td>{{j.global_rank}}</td>

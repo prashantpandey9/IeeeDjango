@@ -21,20 +21,6 @@
 
 	{%include 'events.html'%}
 
-	<section class="sec4" id="xtreme">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<h1> IEEEXtreme</h1>
-					<p>IEEEXtreme is a global challenge in which teams of IEEE Student members – advised and proctored by an IEEE member, and often supported by an IEEE Student Branch – compete in a 24-hour time span against each other to solve a set of programming problems.</p>
-				</div>
-				{% for j in xtreme%}
-				<div class="col-sm-12">
-					<a href="/xtreme/<version>"><h3>IEEEXtreme {{j.version}} Rank of our college.</h3></a>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</section>
+	{%include 'x.html'%}
 
 {%endblock content %}
