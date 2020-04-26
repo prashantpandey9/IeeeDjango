@@ -1,43 +1,55 @@
 {%extends 'index.html'%}
 
+{% load static %}
+
 {% block content%}
 
 {%for i in xtreme%}
+<!-- Xtreme results started -->
+<style>
+  .ttt{
+    margin-top:100px;;
+  }
+  .navbar{
+  background: #000!important;
+  transition: 0.5s;
+  }
+</style>
+<div class="container ttt">
+<h1><center>IEEEXtreme {{i.version}} Result</center></h1>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Global Rank</th>
+        <th scope="col">Team Name</th>
+        <th scope="col">Regional Rank</th>
+        <th scope="col">Country Rank</th>
+        <th scope="col">College Rank</th>
+      </tr>
+    </thead>
+    <tbody>
 
-<h1>IEEEXtreme {{i.version}}</h1>
+      {%for j in team%}
 
-<table class="table table-striped table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Global Rank</th>
-      <th scope="col">Team Name</th>
-      <th scope="col">Regional Rank</th>
-      <th scope="col">Country Rank</th>
-      <th scope="col">College Rank</th>
-    </tr>
-  </thead>
-  <tbody>
+      {%ifequal i.version j.version.version%}
 
-    {%for j in team%}
+      <tr>
+        <td>{{j.global_rank}}</td>
+        <td>{{j.team_name}}</td>
+        <td>{{j.region_rank}}</td>
+        <td>{{j.country_rank}}</td>
+        <td>{{j.college_rank}}</td>
+      </tr>
 
-    {%ifequal i.version j.version.version%}
+      
+      {%endifequal%}
 
-    <tr>
-      <td>{{j.global_rank}}</td>
-      <td>{{j.team_name}}</td>
-      <td>{{j.region_rank}}</td>
-      <td>{{j.country_rank}}</td>
-      <td>{{j.college_rank}}</td>
-    </tr>
+      {%endfor%}
 
-    
-    {%endifequal%}
-
-    {%endfor%}
-
-  </tbody>
-</table>
-
+    </tbody>
+  </table>
+</div>
+<!-- Xtreme results ended-->
 {%endfor%}
 
 {% endblock%} 
