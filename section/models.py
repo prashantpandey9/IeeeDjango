@@ -1,17 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
-# def year_choices():
-#     return [(r,r) for r in range(1984, datetime.date.today().year+1)]
-
-# def current_year():
-#     return datetime.date.today().year
-
-# class MyModel(models.Model):
-#     year = models.IntegerField(_('year'), choices=year_choices, default=current_year)
 class Member(models.Model):
-	image_mem = models.ImageField(upload_to='static/persons')	
+	image_mem = models.ImageField(upload_to='static/media/persons')	
 	name_member = models.CharField(max_length=100)
 	title = models.CharField(max_length=100)
 	society_mem=models.CharField(max_length=200,default="IEEE")
@@ -19,7 +10,7 @@ class Member(models.Model):
 		return self.name_member
 
 class Society(models.Model):
-	image_so = models.ImageField(upload_to='static/images')	
+	image_so = models.ImageField(upload_to='static/media/images')	
 	name_so = models.CharField(max_length=120)
 	discription=models.TextField(max_length=200)
 	def __str__(self):
