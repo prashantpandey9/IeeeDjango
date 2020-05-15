@@ -8,15 +8,23 @@
 <!-- Xtreme results started -->
 <style>
   .ttt{
-    margin-top:100px;;
+    margin-top:100px;
+    
   }
   .navbar{
   background: #000!important;
   transition: 0.5s;
   }
+  @media(max-width: 569px){
+    .ttt h1{
+    font-size: 2rem;
+    font-weight: 200;
+    }
+  }
 </style>
 <div class="container ttt">
 <h1><center>IEEEXtreme {{i.version}} Result</center></h1>
+<div style="overflow: auto;">
   <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -48,6 +56,7 @@
 
     </tbody>
   </table>
+  </div>
 </div>
 <!-- Xtreme results ended-->
 {%endfor%}
