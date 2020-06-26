@@ -17,12 +17,20 @@ class Society(models.Model):
 		return self.name_so
 
 class Event(models.Model):
-	year=models.IntegerField()
-	activity=models.CharField(max_length=100)
-	topic=models.CharField(max_length=100)
-	about_event=models.TextField()
-	def __str__(self):
-		return str(self.year)
+    eventid = models.AutoField(auto_created=True,default=None, primary_key=True, verbose_name='ID')
+    title = models.CharField(max_length=50,default=None)
+    description = models.TextField(default=None)
+    date_start = models.DateField(auto_now=False,default=None)
+    place = models.TextField(default=None)
+    time = models.TimeField(auto_now=False,default=None)
+    coverImage = models.ImageField(default=None)
+    detailTxt = models.TextField(default=None)
+    detailUrl = models.URLField(default=None)
+    ticketUrl = models.URLField(blank=True)
+
+    def __str__(self):
+        return self.title
+
 
 class Xtreme(models.Model):
 	version=models.IntegerField(default=9,primary_key=True)
